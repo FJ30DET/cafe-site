@@ -27,7 +27,7 @@
       <a href="#access">アクセス</a>
       <a href="#reserve" class="nav-cta">ご予約</a>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="navMobile">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -79,13 +79,13 @@
     <p class="section-eyebrow center">MENU</p>
     <h2 class="section-title center">メニュー</h2>
 
-    <div class="menu-tabs">
-      <button class="menu-tab active" data-tab="coffee">コーヒー</button>
-      <button class="menu-tab" data-tab="food">フード</button>
-      <button class="menu-tab" data-tab="sweets">スイーツ</button>
+    <div class="menu-tabs" role="tablist" aria-label="メニューの種類">
+      <button class="menu-tab active" data-tab="coffee" role="tab" id="tab-coffee" aria-selected="true" aria-controls="panel-coffee">コーヒー</button>
+      <button class="menu-tab" data-tab="food" role="tab" id="tab-food" aria-selected="false" aria-controls="panel-food">フード</button>
+      <button class="menu-tab" data-tab="sweets" role="tab" id="tab-sweets" aria-selected="false" aria-controls="panel-sweets">スイーツ</button>
     </div>
 
-    <div class="menu-panel active" data-panel="coffee">
+    <div class="menu-panel active" data-panel="coffee" role="tabpanel" id="panel-coffee" aria-labelledby="tab-coffee">
       <div class="menu-item">
         <div class="menu-item-name"><h3>ハンドドリップコーヒー</h3><span class="dots"></span><span class="price">¥680</span></div>
         <p>週替りのシングルオリジン豆を使用。豆の個性をそのままに。</p>
@@ -104,7 +104,7 @@
       </div>
     </div>
 
-    <div class="menu-panel" data-panel="food">
+    <div class="menu-panel" data-panel="food" role="tabpanel" id="panel-food" aria-labelledby="tab-food">
       <div class="menu-item">
         <div class="menu-item-name"><h3>季節野菜のキッシュ</h3><span class="dots"></span><span class="price">¥980</span></div>
         <p>その日の朝仕入れた野菜をたっぷりと使用。サラダ付き。</p>
@@ -119,7 +119,7 @@
       </div>
     </div>
 
-    <div class="menu-panel" data-panel="sweets">
+    <div class="menu-panel" data-panel="sweets" role="tabpanel" id="panel-sweets" aria-labelledby="tab-sweets">
       <div class="menu-item">
         <div class="menu-item-name"><h3>バスクチーズケーキ</h3><span class="dots"></span><span class="price">¥620</span></div>
         <p>香ばしい表面と、とろけるような口どけ。</p>
@@ -172,7 +172,7 @@
     <div class="reserve-inner reveal">
       <p class="section-eyebrow center">RESERVATION</p>
       <h2 class="section-title center">ご予約</h2>
-      <p class="reserve-lead">お席のご予約はこちらのフォームから承っております。確定後、担当より折り返しご連絡いたします。</p>
+      <p class="reserve-lead">お席のご予約はこちらのフォームから承っております。確定後、担当より折り返しご連絡いたします。<br>※デモサイトのため、入力内容は送信・保存されず、実際のご予約はできません。</p>
 
       <form id="reserveForm" class="reserve-form" novalidate>
         <div class="form-row">
@@ -208,8 +208,8 @@
         <button type="submit" class="btn btn-primary btn-block">予約を送信する</button>
       </form>
 
-      <div class="reserve-success" id="reserveSuccess">
-        <p>ご予約のお申し込みありがとうございます。<br>内容を確認の上、担当よりご連絡いたします。</p>
+      <div class="reserve-success" id="reserveSuccess" role="status">
+        <p>ご入力ありがとうございます。<br>こちらはデモサイトのため、入力内容は送信されておらず、ご予約は成立していません。</p>
       </div>
     </div>
   </section>
